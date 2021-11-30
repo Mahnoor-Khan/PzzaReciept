@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="pizzaStyle.css" rel="stylesheet"/>
+        <title>Pizza Cafe</title>
+    </head>
+    <body  >
+        
+        <nav class="navbar">
+            <div class="navbar__container">
+                
+                <a href="#home" id="navbar__logo"><img src="pizza-logo.png" id="pizza-logo"/></a>
+                <div class="navbar__toggle" id="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+    
+                </div>
+                <ul class="navbar__menu">
+                    <li class="navbar__item ">
+                        <a href="#home" class="navbar__links" id="home-page">Home</a>
+                    </li>
+                    <li class="navbar__item ">
+                        <a href="#about" class="navbar__links" id="about-page">About</a>
+                    </li>
+                    <li class="navbar__item ">
+                        <a href="#services" class="navbar__links" id="services-page">Services</a>
+                    </li>
+                    <li class="navbar__btn">
+                        <a href="#sign-up" class="button" id="sign-up">Sign Up</a>
+                    </li>
+                </ul>
+    
+            </div>
+        </nav>
+    <!-- Main Section -->
+    <div class="main">
+        <h1 class="main_heading">Good food and great vibes</h1>
+    </div>
+    <div class="flex_container">
+        
+            <div class="card"><img class="choice_images" src="c1.jpg"/><button id="btn1" onclick="myFunction1('Choice 1')"  class="OrderBtn">Order Now</button></div> 
+            <div class="card"><img class="choice_images" src="c2.jpg"/><button id="btn2" onclick="myFunction2('Choice 2')"  class="OrderBtn">Order Now</button></div> 
+            <div class="card"><img class="choice_images" src="c3.jpg"/><button id="btn3" onclick="myFunction3('Choice 3')"  class="OrderBtn">Order Now</button></div> 
+          
+    </div>
+    <button id="OpnModalBtn">Open Modal</button>
+   <!-- The Modal -->
+<div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <p>Some text in the Modal..</p>
+      <h1 class="heading1"></h1>
+    </div>
+  
+  </div>
+    </body>
+    <script src="pizza.js"></script>
+</html>
