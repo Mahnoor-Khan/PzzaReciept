@@ -275,14 +275,14 @@
     border: 1px solid #888;
     width: 80%;
   }
-  .close {
+  .close , .close2 {
     color: #aaaaaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
   }
-  .close:hover,
-.close:focus {
+  .close,.close2:hover,
+.close,.close2:focus {
   color: #000;
   text-decoration: none;
   cursor: pointer;
@@ -349,4 +349,27 @@
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
   }
-    
+  .modal_heading{
+    margin-bottom:20px;
+  }
+  .modal_content{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    width:50%;
+    margin-bottom:20px;
+  }
+  .extra_choices{
+    display:flex;
+    flex-direction:column;
+  }
+  .order_btn{
+      padding:8px;
+      background: rgb(37, 177, 107);
+      outline: none;
+      border: none;
+      border-radius: 4px;
+  }
+  .order_btn:hover{
+      cursor: pointer;
+  }

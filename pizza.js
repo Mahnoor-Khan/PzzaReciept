@@ -8,100 +8,77 @@ const mobilemenu = () =>{
     menuLinks.classList.toggle('active');
 }
 menu.addEventListener('click',mobilemenu);
-
+// Modal
 const modal=document.getElementById('myModal');
+const orderModal=document.getElementById('OrderModal');
 const btn =document.getElementsByClassName('OrderBtn');
-// const btn1=document.getElementById('btn1');
-// const btn2=document.getElementById('btn2');
-// const btn3=document.getElementById('btn3');
 const closeBtn=document.getElementsByClassName('close')[0];
-const cheeseCheckBox = document.getElementsByClassName("ECheese");
-// $(btn).click(function() {
-//     alert(this.id); // or alert($(this).attr('id'));
-// });
+const closeBtn2=document.getElementsByClassName('close2')[0];
+const modalHeading=document.getElementsByClassName('modal_heading')[0];
+const Total=document.getElementsByClassName('total')[0];
+const desHeading=document.getElementsByClassName('Heading')[0];
+const desTotal=document.getElementsByClassName('totalAmount')[0];
 
-// function myFunction1(name){
-//     modal.style.display="block";
-//    let heading=`<div class="modal-content"><h1 style="margin-bottom:20px">${name}</h1>
-//    <div style="display:flex;flex-direction:row;justify-content:space-between;width:50%;margin-bottom:20px"><lable><input type="radio" class"regular" />Regular</lable><lable><input type="radio" class"medium" />Medium</lable><lable><input type="radio" class"large" />Large</lable></div><div style="display:flex;flex-direction:column"><label class="container">Extra Cheese
-//    <input type="checkbox"  class="ECheese">
-//    <span class="checkmark"></span>
-//  </label><label class="container">Extra Chicken
-//  <input type="checkbox" checked="checked" class="EChicken">
-//  <span class="checkmark"></span>
-// </label>
-// <label class="container">Extra Mayonese
-//  <input type="checkbox" checked="checked" class="EMayo">
-//  <span class="checkmark"></span>
-// </label></div>
-// <button class="OB">Order Now</button></div>`;
-//     modal.innerHTML= heading;
-    
-//     alert(cheeseCheckBox.innerHTML);
-//     const chickenCheckBox = document.getElementsByClassName("EChicken");
-//     const MayoCheckBox = document.getElementsByClassName("EMayo");
-//     const regular = document.getElementsByClassName("regular");
-//     const medium = document.getElementsByClassName("medium");
-//     const large = document.getElementsByClassName("large");
-//     const OB = document.getElementsByClassName("OB");
+let total='';
+total=600;
 
-//     let total='';
-//     if(regular.checked==true ){
-//         if(cheeseCheckBox.checked==true){
-//              total=500;
-//             total += 50;
-//         }
-//         if(chickenCheckBox.checked==true){
-//             total=700;
-//            total += 80;
-//        }
-       
-//        if(MayoCheckBox.checked==true){
-//         total=1000;
-//        total += 60;
-//    }
-//    OB.onclick(alert(total));
-//     }
-
-
-// }
-
-
-function myFunction2(name){
-    console.log( name)
+function sum(total,a){
+total+=a;
+return alert(total) 
 
 }
-function myFunction3(name){
-    console.log( name)
 
+function myFunction1(name){
+    
+    modal.style.display="block";
+    modalHeading.innerHTML=`${name}`;
+    const chickenCheckBox = document.getElementById('Chicken');
+    const MayoCheckBox = document.getElementById('Mayo');
+    const CheeseCheckBox = document.getElementById('Cheese');
+    const OB = document.getElementById('ONbtn');
+    Total.innerHTML=`Total:${total}`;
+    desTotal.innerHTML=Total.innerHTML;
+    desHeading.innerHTML=modalHeading.innerHTML;
+    
+    
 }
-// btn1.onclick= function(){
-//     alert('ok');
-//     modal.style.display="block";
-   
-// // }
-// btn2.onclick= function(){
-//     modal.style.display="block";
+
+
+function getvalue(value){
+        total+= value;
+        Total.innerHTML=`Total: ${total}`;
+        desTotal.innerHTML=Total.innerHTML;
+        
+}
+
+function Order(){
+    // modal.style.display="none"; 
+    orderModal.style.display="block";
     
-// }
-// btn3.onclick= function(){
-//     modal.style.display="block";
-    
-// }
+}
+function Edit(){
+    orderModal.style.display="none";
+}
 
 closeBtn.onclick=function(){
     modal.style.display="none";
+}
+closeBtn2.onclick=function(){
+    orderModal.style.display="none";
+
 }
 window.onclick=function(event){
     if(event.target==modal){
         modal.style.display="none";
     }
 }
+window.onclick=function(event){
+    if(event.target==modal){
+        orderModal.style.display="none";
+    }
+}
 
-// function showModalData(){
-//     let heading='';
-//     if()
-// }
+
 
 
 
