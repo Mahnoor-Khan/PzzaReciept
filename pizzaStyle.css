@@ -6,9 +6,7 @@
     scroll-behavior: smooth;
     font-family: 'Montserrat', sans-serif;
   }
-
-
-
+/* NavBar */
   .navbar {
     background: orange;
     height: 80px;
@@ -185,20 +183,22 @@
       transform: translateY(-8px) rotate(-45deg);
     }
   }
+  /* Main Section */
   .main{
       height:500px;
       width:100%;
       background: url(pizza-bg.jpg);
       background-size: cover;
-      opacity: 0.8;
       justify-content: center;
       align-items: center;
       display: flex; 
+
   }
   .main_heading{
       position: relative;
     font-family: 'Dancing Script', cursive;
     color:white;
+    outline: white;
     opacity: 1;
     font-size: 90px;
     
@@ -224,13 +224,10 @@
       width:250px;
   }
   .card{
-      /* display: flex; */
       padding:5px;
       margin: auto;
       border-radius: 4px;
       box-shadow:0 3px 6px 0;
-      /* justify-content: center;
-      align-items: center; */
       width:22%;
       height:380px;
       background: rgb(202, 192, 192);
@@ -363,13 +360,49 @@
     display:flex;
     flex-direction:column;
   }
-  .order_btn{
-      padding:8px;
-      background: rgb(37, 177, 107);
+  .total{
+      font-size: 25px;
+      font-weight:bold;
+  }
+  .orderBtnSection{
+      display: flex;
+      justify-content: center;
+  }
+  .order_btn , .edit_btn , .enterBtn{
+      padding:12px;
+      background: green;
       outline: none;
       border: none;
       border-radius: 4px;
+      font-weight: bolder;
+      font-size: 20px;
+      color:white;
+      
   }
-  .order_btn:hover{
+  .order_btn , .edit_btn , .enterBtn:hover{
       cursor: pointer;
   }
+  .ReplaceData{
+      display: none;
+  }
+.discountBtn{
+    padding:10px;
+    background: rgb(105, 167, 248);
+    outline: none;
+    border-radius: 4px;
+    border:0px;
+    font-weight: bold;
+}
+/* Code Input Feild */
+.discountCodeSection{
+    display: none;
+    
+}
+.codeInput{
+    background: white;
+    outline: none;
+    padding:10px;
+    font-size: 20px;
+    border-radius: 4px;
+}
+

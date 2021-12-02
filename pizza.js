@@ -3,10 +3,9 @@ const menuLinks=document.querySelector('.navbar__menu')
 const navLogo=document.querySelector('#nav__logo')
 
 //Display Menu
-const mobilemenu = () =>{
-    menu.classList.toggle('is-active');
+const mobilemenu = () => menu.classList.toggle('is-active');
     menuLinks.classList.toggle('active');
-}
+
 menu.addEventListener('click',mobilemenu);
 // Modal
 const modal=document.getElementById('myModal');
@@ -18,65 +17,74 @@ const modalHeading=document.getElementsByClassName('modal_heading')[0];
 const Total=document.getElementsByClassName('total')[0];
 const desHeading=document.getElementsByClassName('Heading')[0];
 const desTotal=document.getElementsByClassName('totalAmount')[0];
+const selectionData=document.getElementsByClassName('selection-data')[0];
+const replaceData=document.getElementsByClassName('ReplaceData')[0];
+const disCodeInput=document.getElementById('codeInput');
+const disCodeSection=document.getElementsByClassName('discountCodeSection')[0];
+
 
 let total='';
 total=600;
 
-function sum(total,a){
-total+=a;
-return alert(total) 
+sum=(total,a)=>{total+=a;
+return alert(total)}
 
-}
-
-function myFunction1(name){
-    
-    modal.style.display="block";
+myFunction1=(name)=>{modal.style.display="block";
     modalHeading.innerHTML=`${name}`;
-    const chickenCheckBox = document.getElementById('Chicken');
-    const MayoCheckBox = document.getElementById('Mayo');
-    const CheeseCheckBox = document.getElementById('Cheese');
-    const OB = document.getElementById('ONbtn');
+    const orderNowBtn = document.getElementById('orderNowBtn');
     Total.innerHTML=`Total:${total}`;
     desTotal.innerHTML=Total.innerHTML;
-    desHeading.innerHTML=modalHeading.innerHTML;
-    
-    
-}
+    desHeading.innerHTML=modalHeading.innerHTML;}
 
-
-function getvalue(value){
-        total+= value;
+getvalue= (value)=>{total+= value;
         Total.innerHTML=`Total: ${total}`;
-        desTotal.innerHTML=Total.innerHTML;
-        
-}
+        desTotal.innerHTML=Total.innerHTML;}
 
-function Order(){
-    // modal.style.display="none"; 
-    orderModal.style.display="block";
+ Order =() => {replaceData.style.display="block";
+    selectionData.style.display="none"}
+
+ Edit = ()=>{selectionData.style.display="block"
+ replaceData.style.display="none"}
     
-}
-function Edit(){
-    orderModal.style.display="none";
-}
+displayModal = () => modal.style.display="none"
 
-closeBtn.onclick=function(){
-    modal.style.display="none";
-}
-closeBtn2.onclick=function(){
-    orderModal.style.display="none";
 
-}
 window.onclick=function(event){
     if(event.target==modal){
         modal.style.display="none";
     }
 }
-window.onclick=function(event){
-    if(event.target==modal){
-        orderModal.style.display="none";
+
+EnterCode=()=>{
+    disCodeSection.style.display="block"
+    selectionData.style.display="none"
+    replaceData.style.display="none"
+    disCodeInput.value=''
+    disCodeInput.focus()
+}
+closeTasks=()=>{replaceData.style.display="block"
+disCodeSection.style.display="none"
+selectionData.style.display="none"}
+Enter=()=>{
+    let userEnteredCode=disCodeInput.value
+
+    if(userEnteredCode== '123A'){
+        total-= (10 / 100)*total
+        desTotal.innerHTML=total
+        closeTasks()
+        
+    }
+    else if(userEnteredCode=='123B'){
+        total= total- ((20 / 100)*total)
+        desTotal.innerHTML=total
+        closeTasks()
+    }
+    else {
+        closeTasks()
+        return alert("Your Code doen`t Match with any discount code")
     }
 }
+
 
 
 

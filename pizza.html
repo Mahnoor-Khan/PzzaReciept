@@ -8,7 +8,6 @@
         <title>Pizza Cafe</title>
     </head>
     <body  >
-        
         <nav class="navbar">
             <div class="navbar__container">
                 
@@ -21,7 +20,7 @@
                 </div>
                 <ul class="navbar__menu">
                     <li class="navbar__item ">
-                        <a href="#home" class="navbar__links" id="home-page">Home</a>
+                        <a href="#home"  class="navbar__links" id="home-page">Home</a>
                     </li>
                     <li class="navbar__item ">
                         <a href="#about" class="navbar__links" id="about-page">About</a>
@@ -52,8 +51,10 @@
 <div id="myModal" class="modal">
 
     <!-- Modal content -->
-      <div class="modal-content">
-        <span class="close">&times;</span>
+      <div class="modal-content ">
+            
+        <span class="close" onclick="displayModal()">&times;</span>
+        <div class="selection-data">
         <h1 class="modal_heading"></h1>
         <div class="modal_content">
             <lable><input type="radio" class="regular" />Regular</lable>
@@ -67,23 +68,34 @@
             <label class="container">Extra Chicken<input type="checkbox" onclick="getvalue(100)" class="EChicken" id="Chicken"><span class="checkmark"></span></label>
             <label class="container">Extra Mayonese<input type="checkbox" onclick="getvalue(60)" class="EMayo" id="Mayo"><span class="checkmark"></span></label>
         </div>
+        <br>
         <div class="total"></div>
-     <button class="order_btn"  id="ONbtn" onclick="Order()">Order Now</button>
-     <div class="ReplaceData" style="display:none;"></div>
+        <br>
+        <div class="discountOffers">
+            <button class="discountBtn" id="tenPerDisBtn" onclick="EnterCode()">10% Discount</button>
+            <button class="discountBtn" id="twntyPerDisBtn" onclick="EnterCode()">20% Discount</button>
+        </div>
+        <br>
+        <div class="orderBtnSection">
+     <button class="order_btn"  id="orderNowBtn" onclick="Order()">Order Now</button>
+        </div>
+    </div>
+    <!-- Description -->
+     <div class="ReplaceData" >
      <p class="description">You have ordered <span class="Heading"> </span> pizza. Your total bill is <span class="totalAmount"></span> .If You want any modification click the Edit Button below</p>
-             <button class="order_btn"  id="EditBtn" onclick="Edit()">Edit</button>
+     <br>
+             <button class="edit_btn"  id="EditBtn" onclick="Edit()">Edit</button>
              </div>
+             <!-- Discount Code -->
+     <div class="discountCodeSection">
+         <h2>Enter Your Discount Code:</h2>
+         <br>
+        <input type="text" placeholder="Enter Code" class="codeInput" id="codeInput"/>
+        <br><br>
+        <button class="enterBtn" id="enterBtn" onclick="Enter()">Enter</button>
+    </div>
      </div>
-    
-     <div id="OrderModal" class="modal" style="display: none;">
-         <div class="modal-content">
-            <span class="close2">&times;</span>
-             <p class="description">You have ordered <span class="Heading"> </span> pizza. Your total bill is <span class="totalAmount"></span> .If You want any modification click the Edit Button below</p>
-             <button class="order_btn"  id="EditBtn" onclick="Edit()">Edit</button>
-         </div>
-     </div>
-     
-  
+
   </div>
     </body>
     <script src="pizza.js"></script>
