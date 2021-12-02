@@ -187,7 +187,7 @@
   .main{
       height:500px;
       width:100%;
-      background: url(pizza-bg.jpg);
+      background: url(images/pizza-bg.jpg);
       background-size: cover;
       justify-content: center;
       align-items: center;
