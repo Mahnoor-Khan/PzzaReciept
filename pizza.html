@@ -39,60 +39,105 @@
     <div class="main">
         <h1 class="main_heading">Good food and great vibes</h1>
     </div>
-    <div class="flex_container">
+    <div class="choices">
+<div style=""><h1 class="choice-heading">Best Pizza`s in Town</h1></div>
+<br><br><br>
+    <div class="choice-grid">
+        <div class="choice1">
+            <div><img src="images/choice1.png" class="choice1Img"/></div>
+            <div class="pizzaName">Margareta</div>
+            <br>
+            <div class="priceTag">Rs 600 - 1000</div>
+            <br>
+            <div ><button class="orderBtn" onclick="getNameOfPizza('Margareta')">Order Now</button></div>
+        </div>
+        <div class="choice2">
+            <div><img src="images/choice2.png" class="choice2Img"/></div>
+            <div class="pizzaName">Hawaiian</div>
+            <br>
+            <div class="priceTag">Rs 600 - 1000</div>
+            <br>
+            <div ><button class="orderBtn" onclick="getNameOfPizza('Hawaiian')">Order Now</button></div>
+        </div>
+        <div class="choice3">
+            <div><img src="images/c6.jpg" class="choice3Img"/></div>
+            <div class="pizzaName">Pepperoni</div>
+            <br>
+            <div class="priceTag">Rs 600 - 1000</div>
+            <br>
+            <div ><button class="orderBtn" onclick="getNameOfPizza('Pepperoni')">Order Now</button></div>
+        </div>
+       
+        </div>
         
-            <div class="card"><img class="choice_images" src="images/c1.jpg"/><button id="btn1" onclick="myFunction1('Margerita')"  class="OrderBtn">Order Now</button></div> 
-            <div class="card"><img class="choice_images" src="images/c2.jpg"/><button id="btn2" onclick="myFunction1('Hawaiian')"  class="OrderBtn">Order Now</button></div> 
-            <div class="card"><img class="choice_images" src="images/c3.jpg"/><button id="btn3" onclick="myFunction1('Pepperoni')"  class="OrderBtn">Order Now</button></div> 
-          
+    
     </div>
+</div>
     
    <!-- The Modal -->
 <div id="myModal" class="modal">
 
     <!-- Modal content -->
       <div class="modal-content ">
-            
-        <span class="close" onclick="displayModal()">&times;</span>
+          
+        <span class="close" onclick="hideModal()">&times;</span>
         <div class="selection-data">
         <h1 class="modal_heading"></h1>
         <div class="modal_content">
-            <lable><input type="radio" class="regular" />Regular</lable>
-            <lable><input type="radio" class="medium" />Medium</lable>
-            <lable><input type="radio" class="large" />Large</lable>
+            <lable><input type="radio" name="radio" class="regular"  onclick="getvalue(600)"/>  Regular(Rs:600)</lable>
+            <lable><input type="radio" name="radio" class="medium" onclick="getvalue(800)"/>  Medium(Rs:800)</lable>
+            <lable><input type="radio" name="radio" class="large" onclick="getvalue(1000)"/>  Large(Rs:1000)</lable>
         </div>
         <div class="extra_choices">
             <label class="container">Extra Cheese
-            <input type="checkbox" checked="" onclick="getvalue(50)"  class="ECheese" id="Cheese">
+            <input type="checkbox"  onclick="getValueOfExtraToppings(50)"  class="ECheese checkboxes" id="Cheese">
             <span class="checkmark"></span>  </label>
-            <label class="container">Extra Chicken<input type="checkbox" onclick="getvalue(100)" class="EChicken" id="Chicken"><span class="checkmark"></span></label>
-            <label class="container">Extra Mayonese<input type="checkbox" onclick="getvalue(60)" class="EMayo" id="Mayo"><span class="checkmark"></span></label>
+            <label class="container">Extra Chicken<input type="checkbox" onclick="getValueOfExtraToppings(100)" class="EChicken checkboxes" id="Chicken"><span class="checkmark"></span></label>
+            <label class="container">Extra Mayonese<input type="checkbox" onclick="getValueOfExtraToppings(80)" class="EMayo checkboxes" id="Mayo"><span class="checkmark"></span></label>
         </div>
         <br>
-        <div class="total"></div>
+        <div class="quantity-section">
+           <lable  class="quantity-lable" > Quantity:<input type="number" class="quantity"/></lable>        
+        </div>
+        <br>
+
+        <div >Total:<span class="total"></span></div>
         <br>
         <div class="discountOffers">
-            <button class="discountBtn" id="tenPerDisBtn" onclick="EnterCode()">10% Discount</button>
-            <button class="discountBtn" id="twntyPerDisBtn" onclick="EnterCode()">20% Discount</button>
+            <button class="discountBtn" id="tenPerDisBtn" onclick="EnteredCode('123A')">10% Discount</button>
+            <button class="discountBtn" id="twntyPerDisBtn" onclick="EnteredCode('123B')">20% Discount</button>
         </div>
         <br>
         <div class="orderBtnSection">
-     <button class="order_btn"  id="orderNowBtn" onclick="Order()">Order Now</button>
+     <button class="order_btn"  id="orderNowBtn" onclick="ModalOrderNow()">Order Now</button>
         </div>
     </div>
     <!-- Description -->
      <div class="ReplaceData" >
-     <p class="description">You have ordered <span class="Heading"> </span> pizza. Your total bill is <span class="totalAmount"></span> .If You want any modification click the Edit Button below</p>
-     <br>
+        <div>
+            <h1>Receipt</h1>
+            <br>
+            <p class="Reciept">Product Name: <span class="RecieptGetData" id="recieptProductName"></span></p>
+            <br>
+            <p class="Reciept">Quantity: <span class="RecieptGetData" id="recieptQuantity"></span></p>
+            <br>
+            <p class="Reciept">Total: <span class="RecieptGetData" id="recieptTotal"></span></p>
+
+        </div>
+        <br>
+     <!-- <p class="description">You have ordered <span class="Heading"> </span> pizza. Your total bill is <span class="totalAmount"></span> .If You want any modification click the Edit Button below</p>
+     <br> -->
              <button class="edit_btn"  id="EditBtn" onclick="Edit()">Edit</button>
              </div>
              <!-- Discount Code -->
      <div class="discountCodeSection">
-         <h2>Enter Your Discount Code:</h2>
+         <h2>Enter Your Discount Code:(Currently Discount Code is: <span class="code" ></span> )</h2>
          <br>
-        <input type="text" placeholder="Enter Code" class="codeInput" id="codeInput"/>
+         <div >
+        <input type="text" placeholder="Enter Code" class="codeInput"  id="codeInput"/>
+         </div>
         <br><br>
-        <button class="enterBtn" id="enterBtn" onclick="Enter()">Enter</button>
+        <button class="enterBtn" id="enterBtn" onclick="AfterCodeEnter()">Enter</button>
     </div>
      </div>
 

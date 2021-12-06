@@ -194,6 +194,8 @@
       display: flex; 
 
   }
+
+
   .main_heading{
       position: relative;
     font-family: 'Dancing Script', cursive;
@@ -203,55 +205,7 @@
     font-size: 90px;
     
   }
-  .flex_container{
-      display: flex;
-      height: 600px;
-      flex-wrap: wrap;
-      align-content: space-around;
-      margin-top: 50px;
-      margin-left: 150px;
-  }
-  .flex_container > div {
-    background-color: white;
-    width: 23%;
-    margin: 10px;
-    text-align: center;
-    line-height: 20px;
-    font-size: 30px;
-  }
-  .choice_images{
-      height:300px;
-      width:250px;
-  }
-  .card{
-      padding:5px;
-      margin: auto;
-      border-radius: 4px;
-      box-shadow:0 3px 6px 0;
-      width:22%;
-      height:380px;
-      background: rgb(202, 192, 192);
-      margin-top:30px;
-      margin-left: 30px;
-  }
- 
-  .choice_images
-  {
-      border-radius: 4px;
-  }
-  .OrderBtn{
-      background-color: green;
-      padding:15px;
-      text-align: center;
-      align-items: center;
-      width: 92%;
-      border-radius: 4px;
-      outline: none;
-      border: none;
-      font-size: 20px;
-      margin-top: 5px;
-      cursor: pointer;
-  }
+
   .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
@@ -272,14 +226,15 @@
     border: 1px solid #888;
     width: 80%;
   }
-  .close , .close2 {
+  .close  {
     color: #aaaaaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
+    
   }
-  .close,.close2:hover,
-.close,.close2:focus {
+  .close:hover,
+.close:focus {
   color: #000;
   text-decoration: none;
   cursor: pointer;
@@ -368,7 +323,7 @@
       display: flex;
       justify-content: center;
   }
-  .order_btn , .edit_btn , .enterBtn{
+  .order_btn  , .enterBtn{
       padding:12px;
       background: green;
       outline: none;
@@ -381,6 +336,16 @@
   }
   .order_btn , .edit_btn , .enterBtn:hover{
       cursor: pointer;
+  }
+  .edit_btn{
+    padding:10px;
+      background: green;
+      outline: none;
+      border: none;
+      border-radius: 4px;
+      font-weight: bolder;
+      font-size: 15px;
+      color:white;
   }
   .ReplaceData{
       display: none;
@@ -405,4 +370,80 @@
     font-size: 20px;
     border-radius: 4px;
 }
+.contain{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.item{
+  flex: 0 40%;
+  height: 100px;
+  margin-bottom: 2%; /* (100-32*3)/2 */
+  background: pink;
+}
+.choices{
+  padding:50px
+}
+.choice-grid{
+  display:grid;
+  grid-template-columns:25% 25% 25%;
+  gap:10px 0px;
+  text-align: center;
+  justify-content: space-around;
+}
+.choice-heading{
+  text-align: center;
+  font-family: 'Dancing Script', cursive;
+  font-weight:bolder;
+  font-size:70px;
+  color:red
+}
+.orderBtn{
+  background: red;
+  color:white;
+  border:none;
+  outline:none;
+  padding:15px;
+  font-size:18px;
+}
+.quantity-lable{
+  font-weight: bolder;
+  font-size:25px
+}
+.priceTag{
+  color:blue;
+  font-weight: bold;
+  font-size: 18px;
+}
+.choice1Img{
+  height: 250px;
+  width:350px
+}
+.choice2Img{
+  height: 250px;
+  width:320px
+}
+.choice3Img{
+  height: 250px;
+  width:270px
+}
+.Reciept{
+  font-size: 22px;
+  font-weight: bolder;
+}
+.RecieptGetData{
+  font-size: 17px;
+  font-weight: lighter;
+}
+.pizzaName{
+  color:red;
+  font-weight: bolder;
+  font-size:25px
+}
 
+.quantity{
+  outline:none;
+  /* border:none; */
+  font-size:20px;
+  width:50px
+}
