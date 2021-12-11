@@ -89,26 +89,11 @@ getvalue = (value) => {
 }
 count = 0
 decrement = () => {
-  
-    // if (total > 0) {
-    //     if (quantity.innerHTML > 1) {
-    //         if (check1 == true) {
-    //             total -= 50
-    //         }
-    //         if (check2 == true) {
-    //             total -= 100
-    //         }
-    //         if (check3 == true) {
-    //             total -= 80
-    //         }
-    //         if (check1 != true && check2 != true && check3 != true) {
-    //             total -= this.pizzaSizeVal
-    //         }
-    //         total -= pizzaSizeVal
-    //         Total.innerHTML = ` ${total}`
-    //         quantity.innerHTML--
-    //     }
-    // }
+    quantityVal = quantityVal -1
+    
+    document.getElementById('qualtityId').innerText = quantityVal
+    total = total - pizzaSizeVal
+     Total.innerHTML = ` ${total}`
 }
 
 increment = () => {
