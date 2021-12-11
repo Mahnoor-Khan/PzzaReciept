@@ -40,7 +40,7 @@
         <h1 class="main_heading">Good food and great vibes</h1>
     </div>
     <div class="choices">
-<div style=""><h1 class="choice-heading">Best Pizza`s in Town</h1></div>
+<div ><h1 class="choice-heading">Best Pizza`s in Town</h1></div>
 <br><br><br>
     <div class="choice-grid">
         <div class="choice1">
@@ -90,18 +90,18 @@
         </div>
         <div class="extra_choices">
             <label class="container">Extra Cheese
-            <input type="checkbox"  onclick="getValueOfExtraToppings(50)"  class="ECheese checkboxes" id="Cheese">
+            <input type="checkbox"  onclick="extraCheese(50)"  class="ECheese checkboxes" id="Cheese" value="50">
             <span class="checkmark"></span>  </label>
-            <label class="container">Extra Chicken<input type="checkbox" onclick="getValueOfExtraToppings(100)" class="EChicken checkboxes" id="Chicken"><span class="checkmark"></span></label>
-            <label class="container">Extra Mayonese<input type="checkbox" onclick="getValueOfExtraToppings(80)" class="EMayo checkboxes" id="Mayo"><span class="checkmark"></span></label>
+            <label class="container">Extra Chicken<input type="checkbox" onclick="extraChicken(100)" class="EChicken checkboxes" value="100" id="Chicken"><span class="checkmark"></span></label>
+            <label class="container">Extra Mayonese<input type="checkbox" onclick="extraMayo(80)" class="EMayo checkboxes" id="Mayo" value="80"><span class="checkmark"></span></label>
         </div>
         <br>
         <div class="quantity-section">
-           <lable  class="quantity-lable" > Quantity:<input type="number" class="quantity"/></lable>        
+           <lable  class="quantity-lable" > Quantity:  <i class="fa fa-minus decrementBtn" onclick="decrement()"></i>  <span class="quantity" id="qualtityId">1</span>  <i class="fa fa-plus incrementBtn" onclick="increment()"></i></lable>        
         </div>
         <br>
 
-        <div >Total:<span class="total"></span></div>
+        <div >Total:<span class="total">0</span></div>
         <br>
         <div class="discountOffers">
             <button class="discountBtn" id="tenPerDisBtn" onclick="EnteredCode('123A')">10% Discount</button>
@@ -121,13 +121,21 @@
             <br>
             <p class="Reciept">Quantity: <span class="RecieptGetData" id="recieptQuantity"></span></p>
             <br>
+            <p class="Reciept">Extra Cheese: <span class="RecieptGetData" id="recieptECheese"></span></p>
+            <br>
+            <p class="Reciept">Extra Chicken: <span class="RecieptGetData" id="recieptEChicken"></span></p>
+            <br>
+            <p class="Reciept">Extra Mayoneese: <span class="RecieptGetData" id="recieptEMayo"></span></p>
+            <br>
             <p class="Reciept">Total: <span class="RecieptGetData" id="recieptTotal"></span></p>
 
         </div>
         <br>
-     <!-- <p class="description">You have ordered <span class="Heading"> </span> pizza. Your total bill is <span class="totalAmount"></span> .If You want any modification click the Edit Button below</p>
-     <br> -->
+     
              <button class="edit_btn"  id="EditBtn" onclick="Edit()">Edit</button>
+             <div class="orderBtnSection">
+                <button class="order_btn"  id="recOrderNowBtn" onclick="ReceiptOrderPlaced()">Order Now</button>
+                   </div>
              </div>
              <!-- Discount Code -->
      <div class="discountCodeSection">
@@ -138,6 +146,10 @@
          </div>
         <br><br>
         <button class="enterBtn" id="enterBtn" onclick="AfterCodeEnter()">Enter</button>
+    </div>
+    <!-- Last -->
+    <div class="last" id="last">
+        <h1>Your order has been placed!!</h1>
     </div>
      </div>
 
