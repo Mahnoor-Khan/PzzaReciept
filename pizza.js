@@ -44,10 +44,13 @@ const container = document.getElementsByClassName('container');
 const Cheese = document.getElementById('Cheese');
 const Chicken = document.getElementById('Chicken');
 const Mayo = document.getElementById('Mayo');
-
+const orderBtn = document.getElementById('orderNowBtn');
+// orderBtn.disabled=true
 let total = 0;
 
 getNameOfPizza = (name) => {
+    orderBtn.style.background=   'rgba(0, 128, 0, 0.356)'
+    orderBtn.style.cursor=   'not-allowed'
     modal.style.display = 'block';
     selectionData.style.display = 'block'
     disCodeSection.style.display = 'none'
@@ -68,7 +71,9 @@ var extrasVal = 0
 var quantityVal = 1
 // var getEValue;
 getvalue = (value) => {
- 
+    orderBtn.disabled=false
+    orderBtn.style.cursor = "pointer"
+    orderBtn.style.backgroundColor = "green"
     if (pizzaSizeVal > 0) {
         if(quantityVal > 1)
     {  total =   total - pizzaSizeVal * quantityVal }
@@ -89,11 +94,13 @@ getvalue = (value) => {
 }
 count = 0
 decrement = () => {
+    if(quantity.innerHTML>1){
     quantityVal = quantityVal -1
     
     document.getElementById('qualtityId').innerText = quantityVal
     total = total - pizzaSizeVal
      Total.innerHTML = ` ${total}`
+    }
 }
 
 increment = () => {
@@ -110,7 +117,6 @@ var chek1=0
 function extraCheese(value1) {
     this.check1 = !this.check1
     if (this.check1) {
-        // this.getEValue = value
         extrasVal =  value1
         total = total+extrasVal
         Total.innerHTML = ` ${total}`;
@@ -161,6 +167,11 @@ function extraMayo(value) {
 }
 
 function ModalOrderNow() {
+    if(regularRadio.checked==true || mediumRadio.checked==true || largeRadio.checked==true ){
+        document.getElementById('recOrderNowBtn').style.background='green'
+        orderBtn.disabled=false
+        orderBtn.style.cursor = "pointer"
+        orderBtn.style.backgroundColor = "green"
     replaceData.style.display = "block";
     selectionData.style.display = "none"
     disCodeInput.style.display = "none"
@@ -185,9 +196,18 @@ function ModalOrderNow() {
         recieptEMayo.innerHTML = 0
     }
     ReceiptTotal.innerHTML = Total.innerHTML
+    
+}
+else{
+    orderBtn.disabled=true  
+    
+  
+}
+
 }
 
 Edit = () => {
+    document.getElementById('orderNowBtn').style.background='green'
     selectionData.style.display = "block"
     replaceData.style.display = "none"
     total= (pizzaSizeVal*quantityVal) + chek1 + chek2 + chek3
@@ -220,6 +240,11 @@ window.onclick = function (event) {
         selectionData.style.display = "none"
         replaceData.style.display = "none"
         disCodeInput.style.display = "none"
+        quantityVal= 1;
+    extrasVal=0
+    pizzaSizeVal = 0
+    total =0
+    Total.innerHTML = ` ${total}`;
     }
 }
 

@@ -323,9 +323,10 @@
       display: flex;
       justify-content: center;
   }
-  .order_btn  , .enterBtn{
+  .order_btn  {
       padding:12px;
-      background: green;
+      /* background: rgb(97, 184, 97); */
+      background: rgba(0, 128, 0, 0.356);
       outline: none;
       border: none;
       border-radius: 4px;
@@ -334,8 +335,18 @@
       color:white;
       
   }
-  .order_btn , .edit_btn , .enterBtn:hover{
-      cursor: pointer;
+  .enterBtn{
+    padding:12px;
+      background: green;
+      outline: none;
+      border: none;
+      border-radius: 4px;
+      font-weight: bolder;
+      font-size: 20px;
+      color:white;
+  }
+    .edit_btn , .enterBtn:hover{
+      cursor:pointer ;
   }
   .edit_btn{
     padding:10px;
@@ -439,6 +450,7 @@
   color:red;
   font-weight: bolder;
   font-size:25px
+  
 }
 
 .quantity{
@@ -452,4 +464,8 @@
   align-items: center;
   justify-content: center;
   text-align:center ;
+}
+#orderNowBtn{
+  background: rgba(0, 128, 0, 0.356);
+  cursor: not-allowed;
 }
